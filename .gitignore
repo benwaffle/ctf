@@ -1,3 +1,4 @@
 *.pyc
 sshpass.txt
 *.swp
+__pycache__
