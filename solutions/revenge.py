@@ -1,3 +1,5 @@
+# thanks to www.imc.org/ietf-openpgp/mail-archive/msg06063.html 
+
 from Crypto.Hash import SHA
 import gmpy2, socket
 
