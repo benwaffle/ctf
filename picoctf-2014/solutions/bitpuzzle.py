@@ -25,7 +25,7 @@ s.add(c*e == 0x3e436b5f)
 s.add(e+f*2 == 0x5c483831)
 s.add(f&0x70000000 == 0x70000000)
 #s.add(f/g == 0x0e000cec)
-s.add(f==g) # idk
+s.add(f==g)
 s.add(e*3+h*2 == 0x3726eb17)
 s.add(h*8-h+c*4 == 0x8b0b922d)
 #s.add(h*3+0x28 == 0xb9cf9c91)
