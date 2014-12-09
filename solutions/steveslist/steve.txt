@@ -1,7 +1,0 @@
-https://www.owasp.org/index.php/PHP_Object_Injection
-
-we dont need __wakeup
-
-we just need an object that is used
-
-maybe we need a Post object that is destroyed, and a Filter object we control the fields of both, so we can add that filter to the post and then have the filter use preg_replace with e

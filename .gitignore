@@ -1,4 +1,7 @@
 *.pyc
 sshpass.txt
+shell.sh
 *.swp
 __pycache__
+peda-session*
+.gdb_history

