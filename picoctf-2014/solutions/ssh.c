@@ -8,7 +8,7 @@ static int frobcmp(const char *str) {
 	char *s = strdup(str);
 	memfrob(s, len);
 
-    printf("%s\n", s);
+	printf("%s\n", s);
 
 	free(s);
 	return rc;
