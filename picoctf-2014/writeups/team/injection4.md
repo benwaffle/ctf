@@ -3,10 +3,14 @@ Zach: Injection 4 (150 pts)
 So by just quick inspection of the login script, it’s really clear that everything is SQL escaped, and so there are no real hacks available. Now with the registration feature, my first thought was a hack I’ve done before based on registering a user with the username admin followed by spaces past the varchar max length in the database, with a trailing character. This will be added to the database as just admin, with the password I instituted at registration. It will collide with the original admin on the database. However, if the user doesn’t exist, it echo’s that registration is disabled, so this is impossible.
 
 So since there is no way to hack into the login script, it looks like we need to try and brute force the password. This can be done easily with the registration script because it’s not escaped. We can inject a query that instead of checking for a username, it will check for a password for the user admin, and the page will respond with “Someone has already registered {username}” if it finds one or more matches. This would look like the following in the username field:
-    ```admin’ AND password=’{PASSWORD_GUESS}’ OR ‘1’=’2```
+    ```
+    admin’ AND password=’{PASSWORD_GUESS}’ OR ‘1’=’2
+    ```
 
 Of course, brute forcing this would take ages, but thankfully, SQL has a LIKE operator. This looks like the following:
-    ```admin’ AND password LIKE ‘{FRONT_OF_PASS}%” OR ‘1’=’2```
+    ```
+    admin’ AND password LIKE ‘{FRONT_OF_PASS}%” OR ‘1’=’2
+    ```
 
 In this operator, the % sign matches any number of characters in it’s place. This allows us to brute force every possible first character until we find the right one. Then every second character, and etc. until we have the whole password to login with. I used curl in a shell script to do this. Then I called the shell script with a C code that did the iteration of different password. Both codes are included below:
     
